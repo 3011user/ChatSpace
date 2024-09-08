@@ -1,0 +1,98 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    background-image: url('https://c8.alamy.com/comp/2G66KD7/binary-code-in-digital-brain-form-composed-of-lines-triangles-binary-digits-and-dots-high-tech-style-artifical-intelligence-concept-vector-2G66KD7.jpg');
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+
+.container {
+    width: 80%;
+    max-width: 800px;
+    margin: auto;
+}
+
+h1 {
+    text-align: center;
+    color:rgb(118, 232, 232);
+}
+
+.chat-box {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.chat-log {
+    height: 400px;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    overflow-y: auto;
+}
+
+.user-message {
+    text-align: right;
+    margin-bottom: 10px;
+}
+
+.bot-response {
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.user-input {
+    width: 100%;
+    height: 80px;
+    padding: 10px;
+    border: none;
+    border-top: 1px solid #ddd;
+    box-sizing: border-box;
+}
+
+.send-button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.send-button:hover {
+    background-color: #0056b3;
+}
+
+.chat-log {
+    position: relative;
+    height: 400px;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    overflow-y: auto;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.chat-background {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.chat-box {
+    background-image: url('https://i.pinimg.com/564x/7d/35/b8/7d35b83b6a8b238de27ede084d18d17a.jpg');
+    background-size: cover;
+    /*  opacity: 3 ;  */
+
+}
+
+

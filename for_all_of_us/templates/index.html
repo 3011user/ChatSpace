@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interface</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>ChatSpace</h1>
+        
+        
+
+    <div class="chat-box">
+        <div id="chat-log" class="chat-log">
+            <img src="https://i.pinimg.com/564x/7d/35/b8/7d35b83b6a8b238de27ede084d18d17a.jpg" alt="Background Image" class="chat-background">
+        </div>
+        <textarea id="user-input" class="user-input" placeholder="Type your question..."></textarea>
+        <button id="send-button" class="send-button">Send</button>
+    </div>
+    </div>
+
+
+    <script>
+        document.getElementById('send-button').addEventListener('click', function() {
+            const userInput = document.getElementById('user-input').value;
+            if (userInput.trim() === '') return;
+            
+            const chatLog = document.getElementById('chat-log');
+            chatLog.innerHTML += `<div class="user-message">${userInput}</div>`;
+            document.getElementById('user-input').value = '';
+            
+            fetch('/get_response', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ query: userInput }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                chatLog.innerHTML += `<div class="bot-response">${data.response}</div>`;
+                chatLog.scrollTop = chatLog.scrollHeight; // Scroll to bottom
+            });
+        });
+    </script>
+</body>
+</html>
